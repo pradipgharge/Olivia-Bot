@@ -1,4 +1,5 @@
 const { Client, GatewayIntentBits } = require("discord.js");
+const config = require("./config");
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -13,6 +14,7 @@ client.on("messageCreate", (message) => {
   message.reply({ content: "Hi from bot!" });
 });
 
-client.login(
-  "MTE5NTMzNTA3MTI3NjczMjQzNg.GTAh5p.l7ZECIBvLcGiHUEKqKsHld33l1PtZk0PsFiGDw"
-);
+// Use config.token wherever you need your bot token
+const token = config.token;
+
+client.login(token);
